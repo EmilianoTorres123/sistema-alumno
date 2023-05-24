@@ -1,5 +1,5 @@
 <div class="qrcode-container">
-  <input type="text" [(ngModel)]="data" placeholder="Ingrese los datos">
+  <input type="text" [()]="data" placeholder="Ingrese los datos">
   <button (click)="generateQRCode()">Generar Código QR</button>
   <div *ngIf="qrcodeDataUrl" class="qrcode-image">
     <img [src]="qrcodeDataUrl" alt="Código QR">
