@@ -1,1 +1,7 @@
-<qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+<div class="qrcode-container">
+  <input type="text" [(ngModel)]="data" placeholder="Ingrese los datos">
+  <button (click)="generateQRCode()">Generar Código QR</button>
+  <div *ngIf="qrcodeDataUrl" class="qrcode-image">
+    <img [src]="qrcodeDataUrl" alt="Código QR">
+  </div>
+</div>

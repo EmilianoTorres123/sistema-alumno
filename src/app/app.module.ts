@@ -26,12 +26,13 @@ import { ListasAdapter } from './config/adapters/Listas/listas-adapter';
 
 import { MateriasPort } from './config/ports/Materias/materias-port';
 import { MateriasAdapter } from './config/adapters/Materias/materias-adapter';
-import { Listas } from './Views/UI/listas/listas.component';
 import { BajaMateriaComponent } from './Views/UI/baja-materia/baja-materia.component';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
-import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+
+
+
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     MenuComponent,
     DocenteComponent,
     BajaMateriaComponent,
-    ListadoComponent
+    ListadoComponent,
   ],
   imports: [
     AngularFireAuthModule,
@@ -53,7 +54,6 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     CommonModule,
-    NgxQRCodeModule
   ],
   providers: [
     {provide: AlumnosPort, useClass: AlumnoAdapter},

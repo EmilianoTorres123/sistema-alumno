@@ -1,22 +1,29 @@
-import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from "@techiediaries/ngx-qrcode";
-import { Component, OnInit } from '@angular/core';
-import {faAt,faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
+import *  as QRCode from 'qrcode';
+import { FormsModule } from '@angular/forms';
+
+imports: [
+  FormsModule,
+]
+
 @Component({
-  selector: 'app-menu',
+  selector: 'app-listas',
   templateUrl: './listas.component.html',
-  styleUrls: ['./listas.component.scss']
+  styleUrls: ['./listas.component.css']
 })
-export class AppComponent {
-  title ='qr-code';
-  faAt= faAt;
-  faPhoneAlt = faPhoneAlt;
-  url='https://myevents.com/';
-  profile= 'routeTomyProfile';
-  elementType = NgxQrcodeElementTypes.URL;
-  errorCorrectionLevel = NgxQrcodeErrorCorrectionLevels.HIGH;
-  value = this.url + this.profile;
 
+export class QRCodeComponent {
+  data: any;
+  qrcodeDataUrl: any;
 
-  
-
+  generateQRCode() {
+    QRCode.toDataURL(this.data, (err, url) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      this.qrcodeDataUrl = url;
+    });
+  }
 }
+
