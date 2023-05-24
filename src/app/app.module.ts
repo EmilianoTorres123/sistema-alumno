@@ -42,6 +42,7 @@ import { CommonModule } from '@angular/common';
     DocenteComponent,
     BajaMateriaComponent,
     ListadoComponent,
+    
   ],
   imports: [
     AngularFireAuthModule,
